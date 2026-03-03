@@ -1,6 +1,101 @@
 
+# Flutter-Journey 🚀
 
 Welcome to my Flutter learning journey!  
 
 Check my **CAT Section 1 Notes on Notion**:  
 [Click here to open Notion](https://www.notion.so/CAT-setion-1-313b9f727cfa80a3a896d046c4dce2dc?source=copy_link)
+
+---
+
+## Why Dart:
+
+- **Compiles to Native Code → Fast & Smooth performance**
+- **Easy to learn (similar to Java & JavaScript)**
+- **Core language of Flutter**
+- **One codebase for Mobile, Web & Desktop**
+- **Supports JIT (development) & AOT (release)**
+
+![jit.jpg](assets/jit.jpg)
+
+**🔴 JIT**  
+كل ما تيجي تقري صفحة، تترجميها في اللحظة → Flutter بيستخدمه أثناء التطوير  
+
+**🟢 AOT**  
+تترجمي الكتاب كله قبل ما تبدأي تقري → أفضل للأبلكيشنات اللي بتنزل على المتجر  
+
+**Compiler-based:** يحول الكود لجهاز يفهمه مباشرة، بس JIT شبه Interpreter لأنه بيشتغل وقت التشغيل.
+
+---
+
+## 1. Comments
+
+- `//` → Single-line comment  
+- `/* … */` → Multi-line comment  
+- `///` → Documentation comment  
+- `/** … */` → Documentation comment (JavaDoc style)  
+- Documentation comments تستخدم غالبًا مع **Public APIs**
+
+---
+
+## 2. Variables
+
+```dart
+var name = 'Voyager I';
+var year = 1977;
+var antennaDiameter = 3.7;
+var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var image = {
+  'tags': ['saturn'],
+  'url': '//path/to/saturn.jpg',
+};
+الفرق بين dynamic و var
+dynamic message = "Hello Dart"; // القيمة نص
+message = 3.14157; // القيمة تتغير
+
+var message2 = "Hello Dart"; // Dart تحدد النوع تلقائيًا
+// message2 = 3.14; ❌ لا يمكن تغيير النوع بعد أول إسناد
+الفرق بين const و final
+final myList = [1, 2, 3];
+myList.add(4); // ✅ ممكن تعديل الحقول الداخلية
+// myList = [5, 6]; ❌ لا يمكن إعادة تعيين المتغير نفسه
+
+const myConstList = [1, 2, 3];
+// myConstList.add(4); ❌ لا يمكن تعديل الحقول
+// myConstList = [5, 6]; ❌ لا يمكن إعادة تعيين المتغير
+3. Compile-time vs Run-time
+
+Compile-time: تتحقق كل حاجة قبل تشغيل البرنامج (ثوابت، Syntax، Types)
+Run-time: البرنامج يشتغل والقيم اللي محتاجة تتحدد وقت التشغيل
+
+assert(condition, "Error message if condition is false");
+4. Conditional (Ternary)
+condition ? expressionIfTrue : expressionIfFalse;
+5. Loops
+
+while loop
+
+while (condition) {
+  // code
+}
+
+do-while loop
+
+do {
+  // code
+} while (condition);
+
+for loop
+
+for (initialization; condition; update) {
+  // code
+}
+
+مثال قراءة أرقام من المستخدم لحد ما يدخل 0
+
+import 'dart:io';
+
+int num = -1;
+while (num != 0) {
+  num = int.parse(stdin.readLineSync()!);
+}
